@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+header {
+    position: absolute;
+    top: 2rem;
+    left: 7%;
+    z-index: 1;
+}
+
+#sala {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#pared, #suelo {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+#pared {
+    background-color: #777368;
+    top: 0;
+    height: 90%;
+    
+}
+
+#suelo {
+    top: 90%;
+    background-color: #d5c6b3;
+    height: 10%;
+}
+
+#pared-izq, #pared-der {
+    position: absolute;
+    top: -10%;
+    height: 100%;
+    width: 5%;
+    background-color: #8a8579;
+}
+
+#pared-izq {
+    transform-origin: top right;
+    left: 0;
+    transform: skewY(-30deg);
+}
+
+#pared-der {
+    transform-origin: top left;
+    right: 0;
+    transform: skewY(30deg);
+}
+
+#cuadro {
+    position: relative;
+    width: 80vw;
+    height: 40vw; 
+    display: flex;
+    z-index: 2;
+}
+
+#central {
+    width: 40vw;
+}
+
+#izq {
+    width: 20vw;
+}
+
+#izq .grupo {
+    transform-origin: right center;
+}
+
+#der {
+    width: 20vw;
+}
+
+#der .grupo {
+    transform-origin: left center;
+}
+
+#cuadro img {
+    width: 100%;
+    height: 100%;
+}
+
+#cuadro .lateral {
+    perspective: 2000px;
+}
+
+#cuadro .lateral .grupo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+#izq .grupo {
+    transform: rotateY(180deg);
+}
+
+#der .grupo {
+    transform: rotateY(-180deg);
+}
+
+#cuadro .lateral .grupo img {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+#cuadro:hover .lateral .grupo {
+    transform: rotateY(0deg);
+}
+
+#cuadro .lateral .grupo .tapa {
+    transform: rotateY(180deg);
+}
+
+footer {
+    position: absolute;
+    bottom: 2rem;
+    margin: 0 7%;
+    display: flex;
+    width: 86%;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+footer a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+	text-shadow: 0 0 1px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
